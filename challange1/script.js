@@ -1,6 +1,3 @@
-/* ==========================
-   CORE INTERACTIONS & MOTION
-   ========================== */
 
 /* --- nav toggle --- */
 const navToggle = document.getElementById('navToggle');
