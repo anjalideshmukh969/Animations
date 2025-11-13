@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shoppy — Fashion Hub</title>
+
+  <!-- icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- particle canvas & cursor aura -->
+  <canvas id="cursorCanvas" aria-hidden="true"></canvas>
+  <div id="cursorAura" aria-hidden="true"></div>
+
+  <div class="site">
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="logo"><h1>Shoppy</h1></div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#shop" class="nav-link">Shop</a></li>
+        <li><a href="#review" class="nav-link">Review</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#connect" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <i id="bar" class="ri-menu-line"></i>
+      </button>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero section" data-anim="fade-slide-up">
+      <div class="hero-inner">
+        <div class="hero-text" data-parallax data-strength="12">
+          <h2 class="subtle">Fashion Hub</h2>
+          <h1 class="headline">Fashion For Always</h1>
+          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ducimus minus pariatur!</p>
+          <div class="hero-ctas">
+            <button class="btn primary magnetic">Explore</button>
+            <button class="btn ghost magnetic">View Collection</button>
+          </div>
+        </div>
+
+        <!-- keep your exact image source -->
+        <div class="hero-media" data-parallax data-strength="-18" data-float>
+          <img src="../home.jpg" alt="hero" />
+        </div>
+      </div>
+    </header>
+
+    <!-- SHOP -->
+    <section id="shop" class="section shop" data-anim="fade-up">
+      <div class="section-head">
+        <h2>Trending <span>Cloth's</span></h2>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="./img1.jpg" alt="product 1" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <div class="rate">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            </div>
+            <p class="price">$221 : Only</p>
+          </div>
+        </div>
+
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="../img2.jpg" alt="product 2" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <div class="rate">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            </div>
+            <p class="price">$200 : Only</p>
+          </div>
+        </div>
+
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="../img3.jpg" alt="product 3" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <div class="rate">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            </div>
+            <p class="price">$220 : Only</p>
+          </div>
+        </div>
+
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="../imga.jpg" alt="product 4" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <p class="price">$221 : Only</p>
+          </div>
+        </div>
+
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="../imgb.jpg" alt="product 5" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <p class="price">$221 : Only</p>
+          </div>
+        </div>
+
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="../imga.jpg" alt="product 6" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <p class="price">$221 : Only</p>
+          </div>
+        </div>
+
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="../img4.jpg" alt="product 7" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <p class="price">$230 : Only</p>
+          </div>
+        </div>
+
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="../img5.jpg" alt="product 8" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <p class="price">$221 : Only</p>
+          </div>
+        </div>
+
+        <div class="card crd magnetic" data-anim="stagger" data-parallax>
+          <img src="../img6.jpg" alt="product 9" />
+          <div class="card-body">
+            <h3>Top</h3>
+            <p class="price">$221 : Only</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="review" class="section reviews-wrap" data-anim="fade-up">
+      <div class="section-head"><h2>Customer <span>Review</span></h2></div>
+
+      <div class="reviews-grid">
+        <div class="review-card magnetic" data-anim="slide-up">
+          <img src="../char1.jpg" alt="char1" />
+          <h3>Customer 1</h3>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing expedita earum accusamus saepe dicta enim neque unde odit?</p>
+          <button class="btn small">More</button>
+        </div>
+
+        <div class="review-card magnetic" data-anim="slide-up">
+          <img src="../char2.jpg" alt="char2" />
+          <h3>Customer 2</h3>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing expedita earum accusamus saepe dicta enim neque unde odit?</p>
+          <button class="btn small">More</button>
+        </div>
+
+        <div class="review-card magnetic" data-anim="slide-up">
+          <img src="../char3.jpg" alt="char3" />
+          <h3>Customer 3</h3>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing expedita earum accusamus saepe dicta enim neque unde odit?</p>
+          <button class="btn small">More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section blog" data-anim="fade-up">
+      <div class="section-head"><h2>Read <span>Blogs</span></h2></div>
+
+      <div class="blog-grid">
+        <article class="blog-card magnetic" data-anim="stagger">
+          <img src="./img1.jpg" alt="blog 1" />
+          <div class="blog-body">
+            <h3>Quick style tips</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iure accusantium illum voluptas.</p>
+            <a class="btn link" href="https://stylesearch.com/eu/blogs" target="_blank" rel="noopener">Read More</a>
+          </div>
+        </article>
+
+        <article class="blog-card magnetic" data-anim="stagger">
+          <img src="../img2.jpg" alt="blog 2" />
+          <div class="blog-body">
+            <h3>Summer trends</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem esse expedita possimus aperiam.</p>
+            <a class="btn link" href="https://stylesearch.com/eu/blogs" target="_blank" rel="noopener">Read More</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="connect" class="section contact" data-anim="fade-up">
+      <div class="section-head"><h2>Contact <span>Us</span></h2></div>
+
+      <div class="contact-form">
+        <input id="connectName" type="text" placeholder="Enter Your Name" />
+        <input id="connectNumber" type="text" placeholder="Enter your mobile number" />
+        <button class="btn primary magnetic" onclick="connect()">Connect</button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer section" data-anim="fade-up">
+      <div class="footer-grid">
+        <div><h3>Shoppy</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae deleniti vitae dolores adipisci.</p></div>
+        <div><h4>Explore</h4><p>All</p><p>Rated</p><p>Scores</p></div>
+        <div><h4>Connect</h4><p>Youtube</p><p>Instagram</p><p>Twitter</p></div>
+        <div><h4>Nitty Gritty</h4><p>Term & Condition</p><p>Privacy Policy</p></div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
