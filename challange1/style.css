@@ -104,7 +104,7 @@ body {
 
 .card:hover { transform: translateY(-12px) rotateZ(-0.6deg); box-shadow: 0 26px 64px rgba(2,8,20,0.45); }
 
-/* magnetic hint for actionable elements */
+/* magnetic hint */
 .magnetic { will-change: transform; transition: transform .18s cubic-bezier(.2,.9,.2,1); }
 
 /* ---------- REVIEWS ---------- */
@@ -126,21 +126,117 @@ body {
 .contact-form { display:flex; gap:12px; justify-content:center; align-items:center; flex-wrap:wrap; padding:18px 0 40px; }
 .contact-form input { width:320px; max-width:90%; padding:10px; border-radius:8px; border:2px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); color:#e8fbfb; }
 
-/* ---------- FOOTER ---------- */
-.footer { background: transparent; color:#cfeef0; padding:36px 20px; }
-.footer-grid { max-width:1180px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:18px; }
+/* ---------- FOOTER (IMPROVED) ---------- */
+.footer {
+  background: rgba(255,255,255,0.02);
+  color: #cfeef0;
+  padding: 60px 20px 40px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
 
-/* ---------- animations ---------- */
-/* continuous float */
+.footer-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  margin-bottom: 18px;
+  font-weight: 600;
+  color: #eaffff;
+  text-shadow: 0 4px 22px rgba(4,219,219,0.18);
+}
+
+.footer-section p,
+.footer-section li {
+  margin-bottom: 10px;
+  opacity: .9;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: #cfeef0;
+  text-decoration: none;
+  transition: .2s ease;
+}
+
+.footer-section a:hover {
+  color: #04dbdb;
+  text-shadow: 0 4px 20px rgba(4,219,219,0.25);
+}
+
+.social-icons a {
+  margin-right: 12px;
+  font-size: 18px;
+  color: #cfeef0;
+  transition: .2s;
+}
+
+.social-icons a:hover {
+  color: #04dbdb;
+  text-shadow: 0 0 18px rgba(4,219,219,0.4);
+}
+
+.newsletter {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: #e8fbfb;
+}
+
+.newsletter button {
+  background: linear-gradient(90deg,#04bfbf,#037b7b);
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.newsletter button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(3,123,123,0.25);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  opacity: .75;
+}
+
+
+/* float anim */
 [data-float] img { animation: float 5s ease-in-out infinite; will-change: transform; }
 @keyframes float { 0% { transform: translateY(0) rotate(-0.6deg); } 50% { transform: translateY(-10px) rotate(0.6deg); } 100% { transform: translateY(0) rotate(-0.6deg); } }
 
-/* scroll reveal base state */
+/* scroll anim */
 [data-anim] { opacity: 0; transform: translateY(22px); transition: all .7s cubic-bezier(.2,.9,.2,1); }
 [data-anim].in-view { opacity: 1; transform: translateY(0); }
 
-/* small responsive tweaks */
-@media (max-width:1000px) { .cards-grid { grid-template-columns: repeat(2,1fr); } .hero-inner { gap:22px; } }
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1000px) {
+  .cards-grid { grid-template-columns: repeat(2,1fr); }
+  .hero-inner { gap:22px; }
+}
 @media (max-width:700px) {
   .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background: rgba(1,1,21,0.92); flex-direction:column; padding:14px 18px; gap:10px; }
   .nav-links.show { display:flex; }
@@ -152,7 +248,7 @@ body {
   .headline { font-size:34px; }
 }
 
-/* reduce pointer complexity on touch devices */
+/* disable fancy pointers on touch */
 @media (hover: none) and (pointer: coarse) {
   #cursorAura, #cursorCanvas { display: none; }
 }
