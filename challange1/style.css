@@ -468,7 +468,6 @@ body {
   opacity: .75;
 }
 
-
 /* float anim */
 [data-float] img {
   animation: float 5s ease-in-out infinite;
