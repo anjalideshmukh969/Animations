@@ -3,7 +3,7 @@
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 const barIcon = document.getElementById('bar');
-if(navToggle) {
+if (navToggle) {
   navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('show');
     barIcon.className = navLinks.classList.contains('show') ? 'ri-close-line' : 'ri-menu-line';
@@ -103,7 +103,7 @@ const canvas = document.getElementById('cursorCanvas');
 const ctx = canvas.getContext('2d');
 let cw = canvas.width = window.innerWidth;
 let ch = canvas.height = window.innerHeight;
-let cursor = { x: cw/2, y: ch/2, vx: 0, vy: 0 };
+let cursor = { x: cw / 2, y: ch / 2, vx: 0, vy: 0 };
 let particles = [];
 const MAX_PARTICLES = 90;
 
@@ -121,7 +121,7 @@ window.addEventListener('mousemove', e => {
   aura.style.left = `${cursor.x}px`;
   aura.style.top = `${cursor.y}px`;
   // small scale pulse when moving fast
-  aura.style.transform = `translate(-50%,-50%) scale(${Math.min(1.25, 0.9 + Math.hypot(e.movementX, e.movementY)/50)})`;
+  aura.style.transform = `translate(-50%,-50%) scale(${Math.min(1.25, 0.9 + Math.hypot(e.movementX, e.movementY) / 50)})`;
 
   const now = performance.now();
   if (now - lastSpawn > 8) { // throttle spawn
@@ -134,24 +134,24 @@ window.addEventListener('mousemove', e => {
 window.addEventListener('touchstart', () => { aura.style.display = 'none'; canvas.style.display = 'none'; });
 
 // particle factory
-function spawnParticle(x, y, vx=0, vy=0) {
+function spawnParticle(x, y, vx = 0, vy = 0) {
   if (particles.length > MAX_PARTICLES) particles.shift();
   const p = {
-    x: x + (Math.random()-0.5) * 8,
-    y: y + (Math.random()-0.5) * 8,
-    vx: vx * 0.08 + (Math.random()-0.5) * 0.6,
-    vy: vy * 0.08 + (Math.random()-0.5) * 0.6,
+    x: x + (Math.random() - 0.5) * 8,
+    y: y + (Math.random() - 0.5) * 8,
+    vx: vx * 0.08 + (Math.random() - 0.5) * 0.6,
+    vy: vy * 0.08 + (Math.random() - 0.5) * 0.6,
     life: 0,
     ttl: 60 + Math.random() * 60,
-    r: 2 + Math.random()*3,
-    hue: 180 + Math.random()*60
+    r: 2 + Math.random() * 3,
+    hue: 180 + Math.random() * 60
   };
   particles.push(p);
 }
 
 // particle render loop
 function renderParticles() {
-  ctx.clearRect(0,0,cw,ch);
+  ctx.clearRect(0, 0, cw, ch);
   for (let i = particles.length - 1; i >= 0; i--) {
     const p = particles[i];
     p.x += p.vx;
@@ -162,16 +162,16 @@ function renderParticles() {
     const alpha = Math.max(0, 1 - p.life / p.ttl);
 
     // glow
-    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r*6);
-    g.addColorStop(0, `hsla(${p.hue}, 90%, 60%, ${alpha*0.9})`);
-    g.addColorStop(0.4, `hsla(${p.hue}, 80%, 50%, ${alpha*0.35})`);
+    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 6);
+    g.addColorStop(0, `hsla(${p.hue}, 90%, 60%, ${alpha * 0.9})`);
+    g.addColorStop(0.4, `hsla(${p.hue}, 80%, 50%, ${alpha * 0.35})`);
     g.addColorStop(1, `hsla(${p.hue}, 80%, 45%, 0)`);
     ctx.fillStyle = g;
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r*3, 0, Math.PI*2);
+    ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2);
     ctx.fill();
 
-    if (p.life > p.ttl) particles.splice(i,1);
+    if (p.life > p.ttl) particles.splice(i, 1);
   }
 
   requestAnimationFrame(renderParticles);
@@ -183,8 +183,8 @@ let idleTimer = null;
 let idleAngle = 0;
 function idleDrift() {
   idleAngle += 0.01;
-  aura.style.left = `${cursor.x + Math.sin(idleAngle)*3}px`;
-  aura.style.top = `${cursor.y + Math.cos(idleAngle)*3}px`;
+  aura.style.left = `${cursor.x + Math.sin(idleAngle) * 3}px`;
+  aura.style.top = `${cursor.y + Math.cos(idleAngle) * 3}px`;
   requestAnimationFrame(idleDrift);
 }
 requestAnimationFrame(idleDrift);
@@ -210,7 +210,7 @@ document.querySelectorAll('.card').forEach(el => {
 });
 
 
-function connect(){
+function connect() {
   const name = document.getElementById('connectName');
   const number = document.getElementById('connectNumber');
   if (!name || !number) { alert('Please fill the form fields.'); return; }
